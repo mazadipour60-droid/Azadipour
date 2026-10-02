@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Azadipour</title>
+    <title>SA Azadipour | Internationale Geschäfte</title>
+
+    <meta name="description"
+          content="SA Azadipour – Internationale Investitionen, Import, Export und Geschäftsentwicklung.">
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -19,532 +26,775 @@
         }
 
         body {
-            background: #000;
-            color: #fff;
             font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
         }
 
 
-        /* =========================================
-           INTRO
-        ========================================= */
+        /* =========================
+           VARIABLES
+        ========================= */
 
-        #intro {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100vh;
-
-            background: #000;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            z-index: 99999;
-
-            animation: introFadeOut 1.5s ease forwards;
-            animation-delay: 14s;
+        :root {
+            --gold: #c9a227;
+            --gold-light: #e0bd55;
+            --dark: #050505;
+            --dark-2: #0c0c0c;
+            --dark-3: #121212;
+            --gray: #a7a7a7;
+            --white: #ffffff;
+            --border: rgba(201, 162, 39, 0.25);
         }
 
 
-        /* =========================================
-           LOGO AREA
-        ========================================= */
+        /* =========================
+           CONTAINER
+        ========================= */
 
-        .logo-container {
-            position: absolute;
-
-            width: min(700px, 82vw);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            animation: logoMoveUp 1.5s ease forwards;
-            animation-delay: 10.5s;
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
         }
 
 
-        /* خود لوگوی AZADIPOUR */
-
-        #main-logo {
-            width: 100%;
-            height: auto;
-
-            opacity: 0;
-
-            /*
-             * ابتدا لوگو از سمت چپ به راست
-             * به صورت تدریجی نمایان می‌شود
-             */
-            clip-path: inset(
-                0 100% 0 0
-            );
-
-            animation:
-                logoDraw 3.5s cubic-bezier(.77,0,.18,1) forwards,
-                logoGlow 3s ease-in-out 4s infinite alternate;
-
-            animation-delay: 0.5s, 4s;
-        }
-
-
-        /* =========================================
-           LOGO DRAW EFFECT
-        ========================================= */
-
-        @keyframes logoDraw {
-
-            0% {
-                opacity: 0;
-                clip-path: inset(0 100% 0 0);
-                transform: scale(0.96);
-                filter: brightness(0.3) blur(4px);
-            }
-
-            15% {
-                opacity: 1;
-            }
-
-            60% {
-                clip-path: inset(0 35% 0 0);
-                filter: brightness(1.2) blur(0);
-            }
-
-            100% {
-                opacity: 1;
-                clip-path: inset(0 0 0 0);
-                transform: scale(1);
-                filter: brightness(1) blur(0);
-            }
-        }
-
-
-        /* =========================================
-           METALLIC LIGHT
-        ========================================= */
-
-        @keyframes logoGlow {
-
-            0% {
-                filter:
-                    brightness(1)
-                    drop-shadow(0 0 5px rgba(255,255,255,0.15));
-            }
-
-            100% {
-                filter:
-                    brightness(1.15)
-                    drop-shadow(0 0 28px rgba(255,255,255,0.55));
-            }
-        }
-
-
-        /* =========================================
-           LOGO MOVES SLIGHTLY UP
-        ========================================= */
-
-        @keyframes logoMoveUp {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-110px);
-            }
-        }
-
-
-        /* =========================================
-           WELCOME
-        ========================================= */
-
-        #welcome {
-
-            position: absolute;
-
-            top: 58%;
-
-            width: 100%;
-
-            text-align: center;
-
-            font-size: clamp(
-                38px,
-                7vw,
-                90px
-            );
-
-            font-weight: 600;
-
-            letter-spacing: 18px;
-
-            color: #fff;
-
-            opacity: 0;
-
-            transform: translateY(35px);
-            text-shadow:
-                0 0 10px rgba(255,255,255,0.2),
-                0 0 30px rgba(255,255,255,0.15);
-
-            animation: welcomeReveal 2.5s ease forwards;
-
-            animation-delay: 10.8s;
-        }
-
-
-        @keyframes welcomeReveal {
-
-            0% {
-                opacity: 0;
-                transform: translateY(35px);
-                letter-spacing: 30px;
-            }
-
-            50% {
-                opacity: 0.8;
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                letter-spacing: 18px;
-            }
-        }
-
-
-        /* =========================================
-           INTRO FADE OUT
-        ========================================= */
-
-        @keyframes introFadeOut {
-
-            0% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            100% {
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-            }
-        }
-
-
-        /* =========================================
-           MAIN WEBSITE
-        ========================================= */
-
-        #website {
-
-            min-height: 100vh;
-
-            opacity: 0;
-
-            transform: translateY(25px);
-
-            animation:
-                websiteReveal 2s ease forwards;
-
-            animation-delay: 14.2s;
-        }
-
-
-        @keyframes websiteReveal {
-
-            0% {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =========================================
+        /* =========================
            HEADER
-        ========================================= */
+        ========================= */
 
         header {
-
-            position: sticky;
+            position: fixed;
             top: 0;
-
+            left: 0;
+            width: 100%;
             z-index: 1000;
 
-            width: 100%;
+            background: rgba(5, 5, 5, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav {
+            min-height: 82px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            padding: 18px 6%;
-
-            background: rgba(0,0,0,0.88);
-
-            backdrop-filter: blur(18px);
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.12);
         }
 
-
-        .header-logo {
-
-            width: 95px;
-            height: auto;
-        }
-
-
-        nav {
-
+        .logo {
             display: flex;
+            align-items: center;
+            gap: 12px;
 
-            gap: 35px;
-        }
-
-
-        nav a {
-
-            color: #fff;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
+            font-size: 22px;
+            font-weight: 700;
             letter-spacing: 1px;
+        }
 
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
+        .logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .menu a {
+            color: #ddd;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            color: var(--gold);
+        }
+
+        .nav-button {
+            border: 1px solid var(--gold);
+            padding: 10px 18px;
+            border-radius: 4px;
+            color: var(--gold) !important;
+        }
+
+        .nav-button:hover {
+            background: var(--gold);
+            color: #000 !important;
         }
 
 
-        nav a:hover {
+        /* =========================
+           MOBILE MENU
+        ========================= */
 
-            opacity: 0.55;
+        .mobile-button {
+            display: none;
 
-            transform: translateY(-2px);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
         }
 
 
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero {
-
-            min-height: 78vh;
+            min-height: 100vh;
 
             display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
             align-items: center;
 
-            text-align: center;
+            position: relative;
+            overflow: hidden;
 
-            padding: 100px 20px;
-        }
-
-
-        .hero h1 {
-
-            font-size:
-                clamp(48px, 9vw, 115px);
-
-            font-weight: 500;
-
-            letter-spacing: 8px;
-
-            margin-bottom: 30px;
-        }
-
-
-        .hero p {
-
-            max-width: 780px;
-
-            color: #b8b8b8;
-
-            font-size: 19px;
-
-            line-height: 1.9;
-        }
-
-
-        /* =========================================
-           CARDS
-        ========================================= */
-
-        .sections {
-
-            width: 90%;
-
-            max-width: 1300px;
-
-            margin: auto;
-
-            padding-bottom: 110px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(300px, 1fr)
-                );
-
-            gap: 30px;
-        }
-
-
-        .card {
-
-            min-height: 320px;
-
-            padding: 45px 35px;
-
-            border-radius: 20px;
             background:
                 linear-gradient(
-                    145deg,
-                    #171717,
-                    #080808
+                    90deg,
+                    rgba(0,0,0,.95),
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.35)
+                ),
+                url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 75% 50%,
+                    rgba(201,162,39,.15),
+                    transparent 35%
                 );
+        }
 
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
+        .hero-content {
+            position: relative;
+            z-index: 2;
 
-            transition:
-                transform 0.4s ease,
-                border-color 0.4s ease,
-                box-shadow 0.4s ease;
+            max-width: 800px;
+            padding-top: 80px;
+        }
+
+        .small-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #d1d1d1;
+            max-width: 720px;
+            font-size: 18px;
+            margin-bottom: 38px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: var(--gold);
+            color: #000;
+
+            font-weight: 700;
+
+            border: 1px solid var(--gold);
+
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .button-outline {
+            margin-left: 12px;
+
+            background: transparent;
+            color: white;
+            border-color: rgba(255,255,255,.5);
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: black;
+            border-color: white;
         }
 
 
-        .card:hover {
+        /* =========================
+           SECTION
+        ========================= */
 
-            transform: translateY(-10px);
+        section {
+            padding: 110px 0;
+        }
 
-            border-color:
-                rgba(255,255,255,0.45);
+        .section-dark {
+            background: var(--dark);
+        }
 
-            box-shadow:
-                0 25px 70px
-                rgba(0,0,0,0.7);
+        .section-light-dark {
+            background: var(--dark-2);
+        }
+
+        .section-title {
+            max-width: 760px;
+            margin-bottom: 55px;
+        }
+
+        .section-title .small-title {
+            margin-bottom: 12px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 17px;
         }
 
 
-        .card h2 {
+        /* =========================
+           ABOUT
+        ========================= */
 
-            font-size: 27px;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
 
-            font-weight: 500;
+        .about-image {
+            min-height: 480px;
 
-            letter-spacing: 2px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.15),
+                    rgba(0,0,0,.5)
+                ),
+                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85");
 
+            background-size: cover;
+            background-position: center;
+
+            border: 1px solid var(--border);
+        }
+
+        .about-text h2 {
+            font-size: 42px;
             margin-bottom: 25px;
         }
 
-
-        .card p {
-
+        .about-text p {
             color: #bdbdbd;
+            margin-bottom: 22px;
+        }
 
-            font-size: 16px;
+        .about-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
 
-            line-height: 1.9;
+        .about-box {
+            padding: 22px;
+
+            background: var(--dark-3);
+            border-left: 2px solid var(--gold);
+        }
+
+        .about-box h3 {
+            color: white;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .about-box p {
+            margin: 0;
+            font-size: 14px;
         }
 
 
-        /* =========================================
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: #0c0c0c;
+            border: 1px solid rgba(255,255,255,.08);
+
+            transition: .35s;
+            overflow: hidden;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .service-image {
+            height: 230px;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service:nth-child(1) .service-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .service:nth-child(2) .service-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .service:nth-child(3) .service-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .service h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .service p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           GLOBAL NETWORK
+        ========================= */
+
+        .network {
+            min-height: 620px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.82)
+                ),
+                url("https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .network-content {
+            max-width: 650px;
+        }
+
+        .network-content h2 {
+            font-size: clamp(35px, 5vw, 58px);
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+
+        .network-content p {
+            color: #ccc;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .network-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .network-point {
+            border-top: 1px solid var(--gold);
+            padding-top: 16px;
+        }
+
+        .network-point h3 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .network-point p {
+            font-size: 14px;
+            margin: 0;
+            color: #aaa;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px;
+        }
+
+        .contact-info h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .contact-item span {
+            color: #ccc;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-box {
+            background: #0c0c0c;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .form-box h2 {
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            background: #050505;
+            border: 1px solid rgba(255,255,255,.15);
+
+            color: white;
+
+            padding: 14px 15px;
+
+            outline: none;
+
+            transition: .3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+
+            padding: 15px;
+
+            background: var(--gold);
+            border: 1px solid var(--gold);
+
+            color: #000;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .submit-button:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        #form-message {
+            margin-top: 15px;
+            color: var(--gold);
+            display: none;
+        }
+
+
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
+            background: #020202;
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding: 65px 0 25px;
+        }
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.1);
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 45px;
+        }
 
-            text-align: center;
+        .footer-brand h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
 
-            padding: 35px 20px;
+        .footer-brand h2 span {
+            color: var(--gold);
+        }
 
-            color: #707070;
+        .footer-brand p {
+            color: #888;
+            max-width: 450px;
+        }
 
+        .footer-column h3 {
+            color: var(--gold);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #999;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding-top: 22px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            color: #666;
             font-size: 13px;
         }
 
 
-        /* =========================================
-           MOBILE
-        ========================================= */
+        /* =========================
+           ANIMATION
+        ========================= */
 
-        @media (max-width: 700px) {
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
 
-            .logo-container {
+        .fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-                width: 88vw;
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                position: absolute;
+                top: 82px;
+                left: 0;
+                width: 100%;
+
+                background: #050505;
+
+                display: none;
+                flex-direction: column;
+
+                padding: 25px;
+                gap: 20px;
+
+                border-bottom: 1px solid rgba(255,255,255,.1);
             }
 
-            #welcome {
-
-                font-size: 34px;
-
-                letter-spacing: 9px;
+            .menu.active {
+                display: flex;
             }
 
-            header {
-
-                padding: 15px 20px;
+            .mobile-button {
+                display: block;
             }
 
-            .header-logo {
-
-                width: 75px;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            nav {
-
-                gap: 14px;
+            .services {
+                grid-template-columns: 1fr;
             }
 
-            nav a {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
 
-                font-size: 10px;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero {
+                min-height: 850px;
+            }
+        }
 
-                min-height: 70vh;
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 75px 0;
             }
 
             .hero h1 {
-
-                letter-spacing: 4px;
+                font-size: 43px;
             }
 
             .hero p {
-
                 font-size: 16px;
             }
 
-            .card {
+            .button {
+                display: block;
+                text-align: center;
+                margin-bottom: 12px;
+            }
 
-                padding: 32px 25px;
+            .button-outline {
+                margin-left: 0;
+            }
+
+            .about-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .network-points {
+                grid-template-columns: 1fr;
+            }
+
+            .form-box {
+                padding: 25px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
             }
         }
 
@@ -555,95 +805,796 @@
 <body>
 
 
-    <!-- =========================================
-         INTRO SCREEN
-    ========================================== -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <div id="intro">
+<header>
 
-        <div class="logo-container">
+    <div class="container nav">
 
+        <a href="#home" class="logo">
+
+            <!--
+            اگر لوگوی خودت را داری،
+            این آدرس را با فایل لوگوی خودت عوض کن.
+            -->
             <img
-                id="main-logo"
-                src="logo.png"
+                src="https://files.cdn-files-a.com/uploads/placeholder-logo.png"
                 alt="Azadipour Logo"
+                onerror="this.style.display='none'"
             >
 
-        </div>
+            <div>
+                SA <span>Azadipour</span>
+            </div>
+
+        </a>
 
 
-        <div id="welcome">
-            WELCOME
+        <button
+            class="mobile-button"
+            id="mobileButton"
+            aria-label="Menü öffnen"
+        >
+            ☰
+        </button>
+
+
+        <nav class="menu" id="menu">
+
+            <a href="#home">Startseite</a>
+
+            <a href="#about">Über uns</a>
+
+            <a href="#services">Leistungen</a>
+
+            <a href="#network">Globales Netzwerk</a>
+
+            <a href="#contact" class="nav-button">
+                Kontakt
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content fade">
+
+            <div class="small-title">
+                Internationales Unternehmen
+            </div>
+
+            <h1>
+                Internationale Märkte
+                <span>verbinden.</span>
+                Geschäftsmöglichkeiten schaffen.
+            </h1>
+
+            <p>
+                SA Azadipour ist ein international ausgerichtetes
+                Unternehmen mit Fokus auf Investitionen, Import,
+                Export und internationale Geschäftsbeziehungen.
+            </p>
+
+            <a href="#about" class="button">
+                Mehr erfahren
+            </a>
+
+            <a href="#contact" class="button button-outline">
+                Anfrage stellen
+            </a>
+
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- =========================================
-         MAIN WEBSITE
-    ========================================== -->
 
-    <div id="website">
+<!-- =========================
+     ABOUT
+========================= -->
 
+<section id="about" class="section-dark">
 
-        <!-- HEADER -->
+    <div class="container">
 
-        <header>
+        <div class="about-grid">
 
-            <img
-                class="header-logo"
-                src="logo.png"
-                alt="Azadipour"
-            >
+            <div class="about-image fade"></div>
 
 
-            <nav>
+            <div class="about-text fade">
 
-                <a href="#export">
-                    Export & Import
+                <div class="small-title">
+                    Über Azadipour
+                </div>
+
+                <h2>
+                    Nachhaltige und langfristige
+                    Geschäftsbeziehungen.
+                </h2>
+
+                <p>
+                    SA Azadipour ist ein international
+                    ausgerichtetes Unternehmen mit Fokus auf
+                    Investitionen, Import, Export und
+                    internationale Geschäftsbeziehungen.
+                </p>
+
+                <p>
+                    Wir verbinden Unternehmen,
+                    Geschäftspartner und Märkte und schaffen
+                    nachhaltige Möglichkeiten für
+                    grenzüberschreitende Zusammenarbeit.
+                </p>
+
+
+                <div class="about-boxes">
+
+                    <div class="about-box">
+
+                        <h3>
+                            Internationale
+                            Geschäftsentwicklung
+                        </h3>
+
+                        <p>
+                            Aufbau und Entwicklung
+                            langfristiger Geschäftsbeziehungen
+                            zwischen Unternehmen und
+                            internationalen Märkten.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-box">
+
+                        <h3>
+                            Import & Export
+                        </h3>
+
+                        <p>
+                            Zuverlässige Handelslösungen und
+                            internationale Beschaffung für
+                            ausgewählte Produkte und Märkte.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" class="section-light-dark">
+
+    <div class="container">
+
+        <div class="section-title fade">
+
+            <div class="small-title">
+                Unsere Leistungen
+            </div>
+
+            <h2>
+                Schwerpunkte unserer
+                internationalen Tätigkeit.
+            </h2>
+
+            <p>
+                Mit fundierter Expertise und einem
+                weitreichenden Netzwerk unterstützen wir Sie
+                dabei, neue Geschäftsmöglichkeiten sicher und
+                effizient zu realisieren.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <!-- INVESTITION -->
+
+            <article class="service fade">
+
+                <div class="service-image"></div>
+
+                <div class="service-content">
+
+                    <div class="service-label">
+                        Wachstum
+                    </div>
+
+                    <h3>
+                        Investitionen
+                    </h3>
+
+                    <p>
+                        Identifikation und Entwicklung
+                        ausgewählter Investitionsmöglichkeiten
+                        mit langfristiger wirtschaftlicher
+                        Perspektive.
+                    </p>
+
+                    <p>
+                        Wir unterstützen den Aufbau nachhaltiger
+                        Geschäftsmodelle und internationaler
+                        Partnerschaften.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Anfrage stellen →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- IMPORT -->
+
+            <article class="service fade">
+
+                <div class="service-image"></div>
+
+                <div class="service-content">
+
+                    <div class="service-label">
+                        Beschaffung
+                    </div>
+
+                    <h3>
+                        Import
+                    </h3>
+
+                    <p>
+                        Internationale Beschaffung und Einfuhr
+                        ausgewählter Produkte und Waren.
+                    </p>
+
+                    <p>
+                        Wir verbinden zuverlässige Lieferanten
+                        mit internationalen Märkten und
+                        entwickeln effiziente Handelslösungen.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Anfrage stellen →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EXPORT -->
+
+            <article class="service fade">
+
+                <div class="service-image"></div>
+
+                <div class="service-content">
+
+                    <div class="service-label">
+                        Expansion
+                    </div>
+
+                    <h3>
+                        Export
+                    </h3>
+
+                    <p>
+                        Aufbau internationaler Absatzmärkte
+                        für ausgewählte Produkte und Waren.
+                    </p>
+
+                    <p>
+                        Wir unterstützen Unternehmen bei der
+                        Erschließung neuer Märkte und entwickeln
+                        zuverlässige Exportlösungen.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Anfrage stellen →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     GLOBAL NETWORK
+========================= -->
+
+<section id="network" class="network">
+
+    <div class="container">
+
+        <div class="network-content fade">
+
+            <div class="small-title">
+                Globale Partnerschaften
+            </div>
+
+            <h2>
+                Wir bauen starke
+                internationale Brücken.
+            </h2>
+
+            <p>
+                Internationale Zusammenarbeit braucht
+                Vertrauen, Marktverständnis und zuverlässige
+                Partner. Wir verbinden diese Elemente und
+                schaffen langfristige Geschäftsbeziehungen.
+            </p>
+
+
+            <div class="network-points">
+
+
+                <div class="network-point">
+
+                    <h3>
+                        Globale Marktexpertise
+                    </h3>
+
+                    <p>
+                        Tiefgreifendes Verständnis
+                        unterschiedlicher Märkte zur
+                        Risikominimierung und
+                        Potenzialmaximierung.
+                    </p>
+
+                </div>
+
+
+                <div class="network-point">
+
+                    <h3>
+                        Nachhaltiges Wachstum
+                    </h3>
+
+                    <p>
+                        Fokus auf ökologisch und ökonomisch
+                        sinnvolle Geschäftsentscheidungen
+                        für die Zukunft.
+                    </p>
+
+                </div>
+
+
+                <div class="network-point">
+
+                    <h3>
+                        Zuverlässige Logistiknetzwerke
+                    </h3>
+
+                    <p>
+                        Nahtlose Integration von Lieferketten
+                        für reibungslose Import- und
+                        Exportprozesse.
+                    </p>
+
+                </div>
+
+
+                <div class="network-point">
+
+                    <h3>
+                        Langfristige B2B-Beziehungen
+                    </h3>
+
+                    <p>
+                        Persönliche Betreuung und Vertrauen
+                        als Fundament für andauernden
+                        gemeinsamen Erfolg.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="section-dark">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="contact-info fade">
+
+                <div class="small-title">
+                    Kontakt & Anfragen
+                </div>
+
+                <h2>
+                    Lassen Sie uns
+                    zusammenarbeiten.
+                </h2>
+
+                <p>
+                    Sie möchten mit uns zusammenarbeiten oder
+                    mehr über unsere Geschäftsbereiche erfahren?
+                    Wir freuen uns auf Ihre Anfrage.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Globale Erreichbarkeit
+                    </strong>
+
+                    <span>
+                        Internationale Geschäftsanfragen
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Individuelle Beratung
+                    </strong>
+
+                    <span>
+                        Persönliche Betreuung für Ihre Anfrage
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Geschäftsanfragen
+                    </strong>
+
+                    <span>
+                        Investitionen · Import · Export
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-box fade">
+
+                <h2>
+                    Schreiben Sie uns Ihr Anliegen.
+                </h2>
+
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Name / Firma
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Ihr Name oder Firmenname"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            E-Mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="mail@beispiel.de"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Nachricht
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Wie können wir Ihnen helfen?"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Nachricht senden
+                    </button>
+
+
+                    <div id="form-message">
+                        Vielen Dank. Ihre Anfrage wurde vorbereitet.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    SA <span>Azadipour</span>
+                </h2>
+
+                <p>
+                    Ihr starker Partner für internationale
+                    Geschäftsmöglichkeiten, strategische
+                    Investitionen und weltweiten Handel.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Unternehmen
+                </h3>
+
+                <a href="#about">
+                    Über Azadipour
                 </a>
 
-                <a href="#investment">
+                <a href="#services">
+                    Unsere Leistungen
+                </a>
+
+                <a href="#network">
+                    Globales Netzwerk
+                </a>
+
+                <a href="#contact">
+                    Kontakt aufnehmen
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Geschäftsbereiche
+                </h3>
+
+                <a href="#services">
                     Investitionen
                 </a>
 
-            </nav>
+                <a href="#services">
+                    Import
+                </a>
 
-        </header>
+                <a href="#services">
+                    Export
+                </a>
 
+                <a href="#contact">
+                    Geschäftsanfrage
+                </a>
 
+            </div>
 
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <h1>
-                AZADIPOUR
-            </h1>
-
-            <p>
-                Internationale Geschäftsaktivitäten,
-                Handel, Investitionen und langfristige
-                Entwicklungsmöglichkeiten.
-            </p>
-
-        </section>
+        </div>
 
 
+        <div class="footer-bottom">
 
-        <!-- BUSINESS SECTIONS -->
+            <div>
+                © 2026 SA Azadipour. Alle Rechte vorbehalten.
+            </div>
 
-        <section class="sections">
+            <div>
+                Nachhaltige B2B-Beziehungen weltweit.
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-            <!-- EXPORT & IMPORT -->
 
-            <div
-                class="card"
-                id="export"
-            >
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
-                <h2>
-                    EXPORT & IMPORT
-                </h
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const mobileButton =
+        document.getElementById("mobileButton");
+
+    const menu =
+        document.getElementById("menu");
+
+
+    mobileButton.addEventListener("click", function () {
+
+        menu.classList.toggle("active");
+
+    });
+
+
+    /* Close menu after clicking */
+
+    document.querySelectorAll(".menu a").forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            menu.classList.remove("active");
+
+        });
+
+    });
+
+
+
+    /* =========================
+       FORM
+    ========================= */
+
+    const form =
+        document.getElementById("contactForm");
+
+    const formMessage =
+        document.getElementById("form-message");
+
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        formMessage.style.display = "block";
+
+        formMessage.textContent =
+            "Vielen Dank für Ihre Anfrage. Wir werden uns so bald wie möglich bei Ihnen melden.";
+
+        form.reset();
+
+    });
+
+
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
+
+    const fadeElements =
+        document.querySelectorAll(".fade");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    fadeElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+
+</body>
+</html>
