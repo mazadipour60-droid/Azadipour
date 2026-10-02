@@ -1,1600 +1,1382 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SA Azadipour | Internationale Geschäfte</title>
-
-    <meta name="description"
-          content="SA Azadipour – Internationale Investitionen, Import, Export und Geschäftsentwicklung.">
-
-    <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button,
-        input,
-        textarea {
-            font-family: inherit;
-        }
-
-
-        /* =========================
-           VARIABLES
-        ========================= */
-
-        :root {
-            --gold: #c9a227;
-            --gold-light: #e0bd55;
-            --dark: #050505;
-            --dark-2: #0c0c0c;
-            --dark-3: #121212;
-            --gray: #a7a7a7;
-            --white: #ffffff;
-            --border: rgba(201, 162, 39, 0.25);
-        }
-
-
-        /* =========================
-           CONTAINER
-        ========================= */
-
-        .container {
-            width: min(1180px, 92%);
-            margin: auto;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(5, 5, 5, 0.88);
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav {
-            min-height: 82px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .logo img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-        }
-
-        .logo span {
-            color: var(--gold);
-        }
-
-        .menu {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .menu a {
-            color: #ddd;
-            font-size: 14px;
-            transition: .3s;
-        }
-
-        .menu a:hover {
-            color: var(--gold);
-        }
-
-        .nav-button {
-            border: 1px solid var(--gold);
-            padding: 10px 18px;
-            border-radius: 4px;
-            color: var(--gold) !important;
-        }
-
-        .nav-button:hover {
-            background: var(--gold);
-            color: #000 !important;
-        }
-
-
-        /* =========================
-           MOBILE MENU
-        ========================= */
-
-        .mobile-button {
-            display: none;
-
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-
-            position: relative;
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.95),
-                    rgba(0,0,0,.65),
-                    rgba(0,0,0,.35)
-                ),
-                url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=85");
-
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 75% 50%,
-                    rgba(201,162,39,.15),
-                    transparent 35%
-                );
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 800px;
-            padding-top: 80px;
-        }
-
-        .small-title {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 13px;
-            font-weight: 600;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            color: #d1d1d1;
-            max-width: 720px;
-            font-size: 18px;
-            margin-bottom: 38px;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 14px 28px;
-
-            background: var(--gold);
-            color: #000;
-
-            font-weight: 700;
-
-            border: 1px solid var(--gold);
-
-            transition: .3s;
-        }
-
-        .button:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        .button-outline {
-            margin-left: 12px;
-
-            background: transparent;
-            color: white;
-            border-color: rgba(255,255,255,.5);
-        }
-
-        .button-outline:hover {
-            background: white;
-            color: black;
-            border-color: white;
-        }
-
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-dark {
-            background: var(--dark);
-        }
-
-        .section-light-dark {
-            background: var(--dark-2);
-        }
-
-        .section-title {
-            max-width: 760px;
-            margin-bottom: 55px;
-        }
-
-        .section-title .small-title {
-            margin-bottom: 12px;
-        }
-
-        .section-title h2 {
-            font-size: clamp(32px, 4vw, 52px);
-            line-height: 1.15;
-            margin-bottom: 18px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-image {
-            min-height: 480px;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.15),
-                    rgba(0,0,0,.5)
-                ),
-                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85");
-
-            background-size: cover;
-            background-position: center;
-
-            border: 1px solid var(--border);
-        }
-
-        .about-text h2 {
-            font-size: 42px;
-            margin-bottom: 25px;
-        }
-
-        .about-text p {
-            color: #bdbdbd;
-            margin-bottom: 22px;
-        }
-
-        .about-boxes {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .about-box {
-            padding: 22px;
-
-            background: var(--dark-3);
-            border-left: 2px solid var(--gold);
-        }
-
-        .about-box h3 {
-            color: white;
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-
-        .about-box p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service {
-            background: #0c0c0c;
-            border: 1px solid rgba(255,255,255,.08);
-
-            transition: .35s;
-            overflow: hidden;
-        }
-
-        .service:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-        }
-
-        .service-image {
-            height: 230px;
-
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service:nth-child(1) .service-image {
-            background-image:
-                url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=80");
-        }
-
-        .service:nth-child(2) .service-image {
-            background-image:
-                url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1000&q=80");
-        }
-
-        .service:nth-child(3) .service-image {
-            background-image:
-                url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1000&q=80");
-        }
-
-        .service-content {
-            padding: 30px;
-        }
-
-        .service-label {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 11px;
-            margin-bottom: 10px;
-        }
-
-        .service h3 {
-            font-size: 27px;
-            margin-bottom: 15px;
-        }
-
-        .service p {
-            color: var(--gray);
-            font-size: 15px;
-        }
-
-        .service-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-
-        /* =========================
-           GLOBAL NETWORK
-        ========================= */
-
-        .network {
-            min-height: 620px;
-
-            position: relative;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.72),
-                    rgba(0,0,0,.82)
-                ),
-                url("https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2000&q=85");
-
-            background-size: cover;
-            background-position: center;
-        }
-
-        .network-content {
-            max-width: 650px;
-        }
-
-        .network-content h2 {
-            font-size: clamp(35px, 5vw, 58px);
-            line-height: 1.1;
-            margin-bottom: 22px;
-        }
-
-        .network-content p {
-            color: #ccc;
-            font-size: 17px;
-            margin-bottom: 35px;
-        }
-
-        .network-points {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .network-point {
-            border-top: 1px solid var(--gold);
-            padding-top: 16px;
-        }
-
-        .network-point h3 {
-            font-size: 18px;
-            margin-bottom: 7px;
-        }
-
-        .network-point p {
-            font-size: 14px;
-            margin: 0;
-            color: #aaa;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: .8fr 1.2fr;
-            gap: 70px;
-        }
-
-        .contact-info h2 {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .contact-info > p {
-            color: var(--gray);
-            margin-bottom: 35px;
-        }
-
-        .contact-item {
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-
-        .contact-item strong {
-            display: block;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-
-        .contact-item span {
-            color: #ccc;
-        }
-
-
-        /* =========================
-           FORM
-        ========================= */
-
-        .form-box {
-            background: #0c0c0c;
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,.08);
-        }
-
-        .form-box h2 {
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 13px;
-            color: #ddd;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-
-            background: #050505;
-            border: 1px solid rgba(255,255,255,.15);
-
-            color: white;
-
-            padding: 14px 15px;
-
-            outline: none;
-
-            transition: .3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--gold);
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            width: 100%;
-
-            padding: 15px;
-
-            background: var(--gold);
-            border: 1px solid var(--gold);
-
-            color: #000;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: .3s;
-        }
-
-        .submit-button:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        #form-message {
-            margin-top: 15px;
-            color: var(--gold);
-            display: none;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #020202;
-            border-top: 1px solid rgba(255,255,255,.08);
-            padding: 65px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr 1fr;
-            gap: 50px;
-            padding-bottom: 45px;
-        }
-
-        .footer-brand h2 {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand h2 span {
-            color: var(--gold);
-        }
-
-        .footer-brand p {
-            color: #888;
-            max-width: 450px;
-        }
-
-        .footer-column h3 {
-            color: var(--gold);
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
-
-        .footer-column a {
-            display: block;
-            color: #999;
-            margin-bottom: 10px;
-            font-size: 14px;
-            transition: .3s;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,.08);
-            padding-top: 22px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-
-            color: #666;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        .fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity .8s ease, transform .8s ease;
-        }
-
-        .fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .menu {
-                position: absolute;
-                top: 82px;
-                left: 0;
-                width: 100%;
-
-                background: #050505;
-
-                display: none;
-                flex-direction: column;
-
-                padding: 25px;
-                gap: 20px;
-
-                border-bottom: 1px solid rgba(255,255,255,.1);
-            }
-
-            .menu.active {
-                display: flex;
-            }
-
-            .mobile-button {
-                display: block;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 850px;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            section {
-                padding: 75px 0;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .button {
-                display: block;
-                text-align: center;
-                margin-bottom: 12px;
-            }
-
-            .button-outline {
-                margin-left: 0;
-            }
-
-            .about-boxes {
-                grid-template-columns: 1fr;
-            }
-
-            .network-points {
-                grid-template-columns: 1fr;
-            }
-
-            .form-box {
-                padding: 25px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SA Azadipour | International Business</title>
+
+<meta name="description"
+content="SA Azadipour – Internationale Investitionen, Import, Export und globale Geschäftsbeziehungen.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+:root{
+    --gold:#c9a227;
+    --gold2:#e2c15b;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --dark2:#111;
+    --gray:#aaa;
+    --white:#fff;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(3,3,3,.90);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    min-height:82px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.logo-mark{
+    width:48px;
+    height:48px;
+    border:1px solid var(--gold);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--gold);
+    font-weight:bold;
+    font-size:18px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.menu a{
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--gold);
+}
+
+.menu .contact-btn{
+    border:1px solid var(--gold);
+    padding:10px 18px;
+    color:var(--gold);
+}
+
+.menu .contact-btn:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+.mobile-menu{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(0,0,0,.76) 42%,
+            rgba(0,0,0,.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-200px;
+    top:25%;
+    background:rgba(201,162,39,.12);
+    filter:blur(100px);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:820px;
+    padding-top:70px;
+}
+
+.label{
+    color:var(--gold);
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,78px);
+    line-height:1.04;
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:720px;
+    color:#ccc;
+    font-size:18px;
+    margin-bottom:38px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border:1px solid var(--gold);
+    background:var(--gold);
+    color:#000;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:transparent;
+    color:var(--gold);
+}
+
+.btn-outline{
+    background:transparent;
+    color:#fff;
+    border-color:#777;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    border-color:#fff;
+    color:#000;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:110px 0;
+}
+
+.section-dark{
+    background:#050505;
+}
+
+.section-dark2{
+    background:#0b0b0b;
+}
+
+.section-heading{
+    max-width:760px;
+    margin-bottom:55px;
+}
+
+.section-heading h2{
+    font-size:clamp(34px,5vw,54px);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.section-heading p{
+    color:var(--gray);
+    font-size:17px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:520px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.5)),
+        url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1500&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(201,162,39,.3);
+}
+
+.about-text h2{
+    font-size:43px;
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.about-text p{
+    color:#bbb;
+    margin-bottom:20px;
+}
+
+.about-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.about-card{
+    background:#101010;
+    padding:22px;
+    border-left:2px solid var(--gold);
+}
+
+.about-card h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.about-card p{
+    font-size:14px;
+    margin:0;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    background:#101010;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+    overflow:hidden;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.service-img{
+    height:240px;
+    background-size:cover;
+    background-position:center;
+}
+
+.invest{
+    background-image:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1300&q=85");
+}
+
+.import{
+    background-image:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1300&q=85");
+}
+
+.export{
+    background-image:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.4)),
+    url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1300&q=85");
+}
+
+.service-content{
+    padding:30px;
+}
+
+.service-label{
+    color:var(--gold);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.service h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.service p{
+    color:#aaa;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.service-link{
+    display:inline-block;
+    color:var(--gold);
+    font-weight:bold;
+    margin-top:12px;
+}
+
+/* ================= GLOBAL NETWORK ================= */
+
+.network{
+    position:relative;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.78),
+        rgba(0,0,0,.86)
+    ),
+    url("https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.network-content{
+    max-width:760px;
+}
+
+.network-content h2{
+    font-size:clamp(36px,5vw,60px);
+    line-height:1.08;
+    margin-bottom:22px;
+}
+
+.network-content>p{
+    color:#ccc;
+    font-size:17px;
+    margin-bottom:38px;
+}
+
+.network-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.network-item{
+    border-top:1px solid var(--gold);
+    padding-top:15px;
+}
+
+.network-item h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.network-item p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:70px;
+}
+
+.contact-info h2{
+    font-size:46px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.contact-info>p{
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.contact-item{
+    padding:20px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.contact-item strong{
+    display:block;
+    color:var(--gold);
+    margin-bottom:5px;
+}
+
+.contact-item a,
+.contact-item span{
+    color:#ccc;
+}
+
+.contact-item a:hover{
+    color:var(--gold);
+}
+
+.form-box{
+    background:#101010;
+    padding:40px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.form-box h3{
+    font-size:30px;
+    margin-bottom:28px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    color:#ddd;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    background:#050505;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.15);
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+}
+
+.form-group textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    padding:15px;
+    border:1px solid var(--gold);
+    background:var(--gold);
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.submit:hover{
+    background:transparent;
+    color:var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#020202;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:65px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:45px;
+}
+
+.footer-brand h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.footer-brand h2 span{
+    color:var(--gold);
+}
+
+.footer-brand p{
+    color:#777;
+    max-width:450px;
+}
+
+.footer-column h3{
+    color:var(--gold);
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+.footer-column a{
+    display:block;
+    color:#888;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.footer-column a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:22px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#666;
+    font-size:13px;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:82px;
+        left:0;
+        width:100%;
+        background:#050505;
+        flex-direction:column;
+        padding:25px;
+        gap:20px;
+        border-bottom:1px solid rgba(255,255,255,.1);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .hero{
+        min-height:800px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+
+    .network-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-box{
+        padding:25px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="container nav">
+<div class="container nav">
 
-        <a href="#home" class="logo">
+<a href="#home" class="logo">
 
-            <!--
-            اگر لوگوی خودت را داری،
-            این آدرس را با فایل لوگوی خودت عوض کن.
-            -->
-            <img
-                src="https://files.cdn-files-a.com/uploads/placeholder-logo.png"
-                alt="Azadipour Logo"
-                onerror="this.style.display='none'"
-            >
+<div class="logo-mark">
+SA
+</div>
 
-            <div>
-                SA <span>Azadipour</span>
-            </div>
+<div>
+SA <span>Azadipour</span>
+</div>
 
-        </a>
+</a>
 
+<button class="mobile-menu" id="mobileMenu">
+☰
+</button>
 
-        <button
-            class="mobile-button"
-            id="mobileButton"
-            aria-label="Menü öffnen"
-        >
-            ☰
-        </button>
+<nav class="menu" id="menu">
 
+<a href="#home">Startseite</a>
+<a href="#about">Über uns</a>
+<a href="#services">Leistungen</a>
+<a href="#network">Globales Netzwerk</a>
+<a href="#contact" class="contact-btn">Kontakt</a>
 
-        <nav class="menu" id="menu">
+</nav>
 
-            <a href="#home">Startseite</a>
-
-            <a href="#about">Über uns</a>
-
-            <a href="#services">Leistungen</a>
-
-            <a href="#network">Globales Netzwerk</a>
-
-            <a href="#contact" class="nav-button">
-                Kontakt
-            </a>
-
-        </nav>
-
-    </div>
+</div>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
 
-<!-- =========================
-     HERO
-========================= -->
+<section class="hero" id="home">
 
-<main id="home">
+<div class="container">
 
-<section class="hero">
+<div class="hero-content reveal">
 
-    <div class="container">
+<div class="label">
+Internationales Unternehmen
+</div>
 
-        <div class="hero-content fade">
+<h1>
+Internationale Märkte
+<span>verbinden.</span>
+Geschäftsmöglichkeiten schaffen.
+</h1>
 
-            <div class="small-title">
-                Internationales Unternehmen
-            </div>
+<p>
+Azadipour ist ein international ausgerichtetes Unternehmen
+mit Fokus auf Import, Export, internationalen Handel und
+Investitionen. Wir verbinden Geschäftspartner und Märkte
+und entwickeln langfristige internationale
+Geschäftsbeziehungen.
+</p>
 
-            <h1>
-                Internationale Märkte
-                <span>verbinden.</span>
-                Geschäftsmöglichkeiten schaffen.
-            </h1>
+<div class="buttons">
 
-            <p>
-                SA Azadipour ist ein international ausgerichtetes
-                Unternehmen mit Fokus auf Investitionen, Import,
-                Export und internationale Geschäftsbeziehungen.
-            </p>
+<a href="#about" class="btn">
+Mehr erfahren
+</a>
 
-            <a href="#about" class="button">
-                Mehr erfahren
-            </a>
+<a href="#contact" class="btn btn-outline">
+Anfrage stellen
+</a>
 
-            <a href="#contact" class="button button-outline">
-                Anfrage stellen
-            </a>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about" class="section-dark">
 
-    <div class="container">
+<div class="container">
 
-        <div class="about-grid">
+<div class="about">
 
-            <div class="about-image fade"></div>
+<div class="about-image reveal"></div>
 
+<div class="about-text reveal">
 
-            <div class="about-text fade">
+<div class="label">
+Über Azadipour
+</div>
 
-                <div class="small-title">
-                    Über Azadipour
-                </div>
+<h2>
+Nachhaltige und langfristige
+Geschäftsbeziehungen.
+</h2>
 
-                <h2>
-                    Nachhaltige und langfristige
-                    Geschäftsbeziehungen.
-                </h2>
+<p>
+Azadipour ist ein international ausgerichtetes Unternehmen
+mit Fokus auf Investitionen, Import, Export und
+internationale Geschäftsbeziehungen.
+</p>
 
-                <p>
-                    SA Azadipour ist ein international
-                    ausgerichtetes Unternehmen mit Fokus auf
-                    Investitionen, Import, Export und
-                    internationale Geschäftsbeziehungen.
-                </p>
+<p>
+Wir verbinden Unternehmen, Geschäftspartner und Märkte
+und schaffen nachhaltige Möglichkeiten für
+grenzüberschreitende Zusammenarbeit.
+</p>
 
-                <p>
-                    Wir verbinden Unternehmen,
-                    Geschäftspartner und Märkte und schaffen
-                    nachhaltige Möglichkeiten für
-                    grenzüberschreitende Zusammenarbeit.
-                </p>
+<div class="about-cards">
 
+<div class="about-card">
 
-                <div class="about-boxes">
+<h3>
+Internationale Geschäftsentwicklung
+</h3>
 
-                    <div class="about-box">
+<p>
+Aufbau und Entwicklung langfristiger
+Geschäftsbeziehungen zwischen Unternehmen
+und internationalen Märkten.
+</p>
 
-                        <h3>
-                            Internationale
-                            Geschäftsentwicklung
-                        </h3>
+</div>
 
-                        <p>
-                            Aufbau und Entwicklung
-                            langfristiger Geschäftsbeziehungen
-                            zwischen Unternehmen und
-                            internationalen Märkten.
-                        </p>
+<div class="about-card">
 
-                    </div>
+<h3>
+Import & Export
+</h3>
 
+<p>
+Zuverlässige Handelslösungen und internationale
+Beschaffung für ausgewählte Produkte und Märkte.
+</p>
 
-                    <div class="about-box">
+</div>
 
-                        <h3>
-                            Import & Export
-                        </h3>
+</div>
 
-                        <p>
-                            Zuverlässige Handelslösungen und
-                            internationale Beschaffung für
-                            ausgewählte Produkte und Märkte.
-                        </p>
+</div>
 
-                    </div>
+</div>
 
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
+<!-- ================= SERVICES ================= -->
 
-<!-- =========================
-     SERVICES
-========================= -->
+<section id="services" class="section-dark2">
 
-<section id="services" class="section-light-dark">
+<div class="container">
 
-    <div class="container">
+<div class="section-heading reveal">
 
-        <div class="section-title fade">
+<div class="label">
+Unsere Leistungen
+</div>
 
-            <div class="small-title">
-                Unsere Leistungen
-            </div>
+<h2>
+Schwerpunkte unserer
+internationalen Tätigkeit.
+</h2>
 
-            <h2>
-                Schwerpunkte unserer
-                internationalen Tätigkeit.
-            </h2>
+<p>
+Mit einem internationalen Netzwerk unterstützen wir
+Geschäftspartner bei der Entwicklung neuer
+Geschäftsmöglichkeiten und Märkte.
+</p>
 
-            <p>
-                Mit fundierter Expertise und einem
-                weitreichenden Netzwerk unterstützen wir Sie
-                dabei, neue Geschäftsmöglichkeiten sicher und
-                effizient zu realisieren.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="services">
+<div class="services">
 
 
-            <!-- INVESTITION -->
+<article class="service reveal">
 
-            <article class="service fade">
+<div class="service-img invest"></div>
 
-                <div class="service-image"></div>
+<div class="service-content">
 
-                <div class="service-content">
+<div class="service-label">
+Wachstum
+</div>
 
-                    <div class="service-label">
-                        Wachstum
-                    </div>
+<h3>
+Investitionen
+</h3>
 
-                    <h3>
-                        Investitionen
-                    </h3>
+<p>
+Identifikation und Entwicklung ausgewählter
+Investitionsmöglichkeiten mit langfristiger
+wirtschaftlicher Perspektive.
+</p>
 
-                    <p>
-                        Identifikation und Entwicklung
-                        ausgewählter Investitionsmöglichkeiten
-                        mit langfristiger wirtschaftlicher
-                        Perspektive.
-                    </p>
+<p>
+Wir unterstützen den Aufbau nachhaltiger
+Geschäftsmodelle und internationaler Partnerschaften.
+</p>
 
-                    <p>
-                        Wir unterstützen den Aufbau nachhaltiger
-                        Geschäftsmodelle und internationaler
-                        Partnerschaften.
-                    </p>
+<a href="#contact" class="service-link">
+Anfrage stellen →
+</a>
 
-                    <a href="#contact" class="service-link">
-                        Anfrage stellen →
-                    </a>
+</div>
 
-                </div>
-
-            </article>
+</article>
 
 
+<article class="service reveal">
 
-            <!-- IMPORT -->
+<div class="service-img import"></div>
 
-            <article class="service fade">
+<div class="service-content">
 
-                <div class="service-image"></div>
+<div class="service-label">
+Beschaffung
+</div>
 
-                <div class="service-content">
+<h3>
+Import
+</h3>
 
-                    <div class="service-label">
-                        Beschaffung
-                    </div>
+<p>
+Internationale Beschaffung und Einfuhr ausgewählter
+Produkte und Waren.
+</p>
 
-                    <h3>
-                        Import
-                    </h3>
+<p>
+Wir verbinden zuverlässige Lieferanten mit
+internationalen Märkten.
+</p>
 
-                    <p>
-                        Internationale Beschaffung und Einfuhr
-                        ausgewählter Produkte und Waren.
-                    </p>
+<a href="#contact" class="service-link">
+Anfrage stellen →
+</a>
 
-                    <p>
-                        Wir verbinden zuverlässige Lieferanten
-                        mit internationalen Märkten und
-                        entwickeln effiziente Handelslösungen.
-                    </p>
+</div>
 
-                    <a href="#contact" class="service-link">
-                        Anfrage stellen →
-                    </a>
-
-                </div>
-
-            </article>
+</article>
 
 
+<article class="service reveal">
 
-            <!-- EXPORT -->
+<div class="service-img export"></div>
 
-            <article class="service fade">
+<div class="service-content">
 
-                <div class="service-image"></div>
+<div class="service-label">
+Expansion
+</div>
 
-                <div class="service-content">
+<h3>
+Export
+</h3>
 
-                    <div class="service-label">
-                        Expansion
-                    </div>
+<p>
+Aufbau internationaler Absatzmärkte für ausgewählte
+Produkte und Waren.
+</p>
 
-                    <h3>
-                        Export
-                    </h3>
+<p>
+Wir unterstützen Unternehmen bei der Erschließung
+neuer internationaler Märkte.
+</p>
 
-                    <p>
-                        Aufbau internationaler Absatzmärkte
-                        für ausgewählte Produkte und Waren.
-                    </p>
+<a href="#contact" class="service-link">
+Anfrage stellen →
+</a>
 
-                    <p>
-                        Wir unterstützen Unternehmen bei der
-                        Erschließung neuer Märkte und entwickeln
-                        zuverlässige Exportlösungen.
-                    </p>
+</div>
 
-                    <a href="#contact" class="service-link">
-                        Anfrage stellen →
-                    </a>
+</article>
 
-                </div>
+</div>
 
-            </article>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================
-     GLOBAL NETWORK
-========================= -->
+<!-- ================= NETWORK ================= -->
 
 <section id="network" class="network">
 
-    <div class="container">
+<div class="container">
 
-        <div class="network-content fade">
+<div class="network-content reveal">
 
-            <div class="small-title">
-                Globale Partnerschaften
-            </div>
+<div class="label">
+Globale Partnerschaften
+</div>
 
-            <h2>
-                Wir bauen starke
-                internationale Brücken.
-            </h2>
+<h2>
+Wir bauen starke
+internationale Brücken.
+</h2>
 
-            <p>
-                Internationale Zusammenarbeit braucht
-                Vertrauen, Marktverständnis und zuverlässige
-                Partner. Wir verbinden diese Elemente und
-                schaffen langfristige Geschäftsbeziehungen.
-            </p>
+<p>
+Internationale Zusammenarbeit braucht Vertrauen,
+Marktverständnis und zuverlässige Partner.
+Wir verbinden diese Elemente und schaffen
+langfristige Geschäftsbeziehungen.
+</p>
 
+<div class="network-grid">
 
-            <div class="network-points">
+<div class="network-item">
 
+<h3>
+Globale Marktexpertise
+</h3>
 
-                <div class="network-point">
+<p>
+Verständnis unterschiedlicher Märkte und
+internationaler Geschäftsmöglichkeiten.
+</p>
 
-                    <h3>
-                        Globale Marktexpertise
-                    </h3>
+</div>
 
-                    <p>
-                        Tiefgreifendes Verständnis
-                        unterschiedlicher Märkte zur
-                        Risikominimierung und
-                        Potenzialmaximierung.
-                    </p>
+<div class="network-item">
 
-                </div>
+<h3>
+Nachhaltiges Wachstum
+</h3>
 
+<p>
+Langfristige Geschäftsentscheidungen mit
+nachhaltiger Perspektive.
+</p>
 
-                <div class="network-point">
+</div>
 
-                    <h3>
-                        Nachhaltiges Wachstum
-                    </h3>
+<div class="network-item">
 
-                    <p>
-                        Fokus auf ökologisch und ökonomisch
-                        sinnvolle Geschäftsentscheidungen
-                        für die Zukunft.
-                    </p>
+<h3>
+Zuverlässige Logistik
+</h3>
 
-                </div>
+<p>
+Effiziente Lösungen für internationale
+Liefer- und Handelsprozesse.
+</p>
 
+</div>
 
-                <div class="network-point">
+<div class="network-item">
 
-                    <h3>
-                        Zuverlässige Logistiknetzwerke
-                    </h3>
+<h3>
+Langfristige B2B-Beziehungen
+</h3>
 
-                    <p>
-                        Nahtlose Integration von Lieferketten
-                        für reibungslose Import- und
-                        Exportprozesse.
-                    </p>
+<p>
+Vertrauen und persönliche Betreuung als
+Basis erfolgreicher Partnerschaften.
+</p>
 
-                </div>
+</div>
 
+</div>
 
-                <div class="network-point">
+</div>
 
-                    <h3>
-                        Langfristige B2B-Beziehungen
-                    </h3>
-
-                    <p>
-                        Persönliche Betreuung und Vertrauen
-                        als Fundament für andauernden
-                        gemeinsamen Erfolg.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact" class="section-dark">
 
-    <div class="container">
+<div class="container">
 
-        <div class="contact-grid">
+<div class="contact">
 
+<div class="contact-info reveal">
 
-            <div class="contact-info fade">
+<div class="label">
+Kontakt & Anfragen
+</div>
 
-                <div class="small-title">
-                    Kontakt & Anfragen
-                </div>
+<h2>
+Lassen Sie uns
+zusammenarbeiten.
+</h2>
 
-                <h2>
-                    Lassen Sie uns
-                    zusammenarbeiten.
-                </h2>
-
-                <p>
-                    Sie möchten mit uns zusammenarbeiten oder
-                    mehr über unsere Geschäftsbereiche erfahren?
-                    Wir freuen uns auf Ihre Anfrage.
-                </p>
-
-
-                <div class="contact-item">
-
-                    <strong>
-                        Globale Erreichbarkeit
-                    </strong>
-
-                    <span>
-                        Internationale Geschäftsanfragen
-                    </span>
-
-                </div>
+<p>
+Sie möchten mit uns zusammenarbeiten oder mehr
+über unsere Geschäftsbereiche erfahren?
+Wir freuen uns auf Ihre Anfrage.
+</p>
 
 
-                <div class="contact-item">
+<div class="contact-item">
 
-                    <strong>
-                        Individuelle Beratung
-                    </strong>
+<strong>
+E-Mail
+</strong>
 
-                    <span>
-                        Persönliche Betreuung für Ihre Anfrage
-                    </span>
+<a href="mailto:herzchirurgsinaazadipour@gmail.com">
+herzchirurgsinaazadipour@gmail.com
+</a>
 
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>
-                        Geschäftsanfragen
-                    </strong>
-
-                    <span>
-                        Investitionen · Import · Export
-                    </span>
-
-                </div>
-
-            </div>
+</div>
 
 
+<div class="contact-item">
 
-            <div class="form-box fade">
+<strong>
+Geschäftsbereiche
+</strong>
 
-                <h2>
-                    Schreiben Sie uns Ihr Anliegen.
-                </h2>
+<span>
+Investitionen · Import · Export
+</span>
 
-
-                <form id="contactForm">
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Name / Firma
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Ihr Name oder Firmenname"
-                            required
-                        >
-
-                    </div>
+</div>
 
 
-                    <div class="form-group">
+<div class="contact-item">
 
-                        <label for="email">
-                            E-Mail
-                        </label>
+<strong>
+Internationale Geschäftsanfragen
+</strong>
 
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="mail@beispiel.de"
-                            required
-                        >
+<span>
+Wir freuen uns auf Ihre Kontaktaufnahme.
+</span>
 
-                    </div>
+</div>
 
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Nachricht
-                        </label>
-
-                        <textarea
-                            id="message"
-                            placeholder="Wie können wir Ihnen helfen?"
-                            required
-                        ></textarea>
-
-                    </div>
+</div>
 
 
-                    <button
-                        type="submit"
-                        class="submit-button"
-                    >
-                        Nachricht senden
-                    </button>
+<div class="form-box reveal">
+
+<h3>
+Schreiben Sie uns Ihr Anliegen.
+</h3>
 
 
-                    <div id="form-message">
-                        Vielen Dank. Ihre Anfrage wurde vorbereitet.
-                    </div>
+<form
+action="mailto:herzchirurgsinaazadipour@gmail.com"
+method="post"
+enctype="text/plain"
+>
 
-                </form>
+<div class="form-group">
 
-            </div>
+<label>
+Name / Firma
+</label>
 
-        </div>
+<input
+type="text"
+name="Name / Firma"
+placeholder="Ihr Name oder Firmenname"
+required
+>
 
-    </div>
+</div>
+
+
+<div class="form-group">
+
+<label>
+E-Mail
+</label>
+
+<input
+type="email"
+name="E-Mail"
+placeholder="Ihre E-Mail-Adresse"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Nachricht
+</label>
+
+<textarea
+name="Nachricht"
+placeholder="Wie können wir Ihnen helfen?"
+required
+></textarea>
+
+</div>
+
+
+<button type="submit" class="submit">
+Nachricht senden
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-</main>
 
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-grid">
+<div class="footer-grid">
 
+<div class="footer-brand">
 
-            <div class="footer-brand">
+<h2>
+SA <span>Azadipour</span>
+</h2>
 
-                <h2>
-                    SA <span>Azadipour</span>
-                </h2>
+<p>
+Ihr Partner für internationale
+Geschäftsmöglichkeiten, Investitionen,
+Import, Export und weltweiten Handel.
+</p>
 
-                <p>
-                    Ihr starker Partner für internationale
-                    Geschäftsmöglichkeiten, strategische
-                    Investitionen und weltweiten Handel.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Unternehmen
-                </h3>
-
-                <a href="#about">
-                    Über Azadipour
-                </a>
-
-                <a href="#services">
-                    Unsere Leistungen
-                </a>
-
-                <a href="#network">
-                    Globales Netzwerk
-                </a>
-
-                <a href="#contact">
-                    Kontakt aufnehmen
-                </a>
-
-            </div>
+</div>
 
 
-            <div class="footer-column">
+<div class="footer-column">
 
-                <h3>
-                    Geschäftsbereiche
-                </h3>
+<h3>
+Unternehmen
+</h3>
 
-                <a href="#services">
-                    Investitionen
-                </a>
+<a href="#about">
+Über Azadipour
+</a>
 
-                <a href="#services">
-                    Import
-                </a>
+<a href="#services">
+Unsere Leistungen
+</a>
 
-                <a href="#services">
-                    Export
-                </a>
+<a href="#network">
+Globales Netzwerk
+</a>
 
-                <a href="#contact">
-                    Geschäftsanfrage
-                </a>
+<a href="#contact">
+Kontakt
+</a>
 
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="footer-bottom">
+<div class="footer-column">
 
-            <div>
-                © 2026 SA Azadipour. Alle Rechte vorbehalten.
-            </div>
+<h3>
+Geschäftsbereiche
+</h3>
 
-            <div>
-                Nachhaltige B2B-Beziehungen weltweit.
-            </div>
+<a href="#services">
+Investitionen
+</a>
 
-        </div>
+<a href="#services">
+Import
+</a>
 
-    </div>
+<a href="#services">
+Export
+</a>
+
+<a href="mailto:herzchirurgsinaazadipour@gmail.com">
+E-Mail senden
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div>
+© 2026 SA Azadipour. Alle Rechte vorbehalten.
+</div>
+
+<div>
+Nachhaltige B2B-Beziehungen weltweit.
+</div>
+
+</div>
+
+</div>
 
 </footer>
 
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
-    /* =========================
-       MOBILE MENU
-    ========================= */
+/* MOBILE MENU */
 
-    const mobileButton =
-        document.getElementById("mobileButton");
+const mobileMenu =
+document.getElementById("mobileMenu");
 
-    const menu =
-        document.getElementById("menu");
+const menu =
+document.getElementById("menu");
 
+mobileMenu.addEventListener("click",function(){
 
-    mobileButton.addEventListener("click", function () {
+menu.classList.toggle("active");
 
-        menu.classList.toggle("active");
-
-    });
+});
 
 
-    /* Close menu after clicking */
+document.querySelectorAll(".menu a").forEach(function(link){
 
-    document.querySelectorAll(".menu a").forEach(link => {
+link.addEventListener("click",function(){
 
-        link.addEventListener("click", function () {
+menu.classList.remove("active");
 
-            menu.classList.remove("active");
+});
 
-        });
-
-    });
+});
 
 
+/* SCROLL ANIMATION */
 
-    /* =========================
-       FORM
-    ========================= */
+const elements =
+document.querySelectorAll(".reveal");
 
-    const form =
-        document.getElementById("contactForm");
+const observer =
+new IntersectionObserver(function(entries){
 
-    const formMessage =
-        document.getElementById("form-message");
+entries.forEach(function(entry){
 
+if(entry.isIntersecting){
 
-    form.addEventListener("submit", function(event) {
+entry.target.classList.add("show");
 
-        event.preventDefault();
+}
 
-        formMessage.style.display = "block";
+});
 
-        formMessage.textContent =
-            "Vielen Dank für Ihre Anfrage. Wir werden uns so bald wie möglich bei Ihnen melden.";
-
-        form.reset();
-
-    });
+},{
+threshold:.12
+});
 
 
+elements.forEach(function(element){
 
-    /* =========================
-       SCROLL ANIMATION
-    ========================= */
+observer.observe(element);
 
-    const fadeElements =
-        document.querySelectorAll(".fade");
-
-
-    const observer =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.12
-            }
-
-        );
-
-
-    fadeElements.forEach(element => {
-
-        observer.observe(element);
-
-    });
+});
 
 </script>
-
 
 </body>
 </html>
